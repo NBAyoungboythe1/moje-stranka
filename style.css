@@ -1,0 +1,209 @@
+/* Definice barev ze Style Guide */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+  
+  --font-young-serif: 'Young Serif', serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+/* Reset stylů */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--stone-100);
+  font-family: var(--font-outfit);
+  font-size: 16px;
+  color: var(--stone-600);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+}
+
+/* Hlavní karta (Desktop verze) */
+.recipe-card {
+  background-color: var(--white);
+  max-width: 736px;
+  border-radius: 24px;
+  padding: 2.5rem;
+}
+
+.recipe-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+/* Typografie a Mezery */
+h1 {
+  font-family: var(--font-young-serif);
+  color: var(--stone-900);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: var(--font-young-serif);
+  color: var(--brown-800);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Box pro dobu přípravy */
+.prep-time {
+  background-color: var(--rose-50);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.prep-time h3 {
+  color: var(--rose-800);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.prep-time ul {
+  list-style-type: none; /* Odstraní výchozí odrážky */
+}
+
+.prep-time ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.prep-time ul li::before {
+  content: "\2022";
+  color: var(--rose-800);
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0.5rem;
+}
+
+.prep-time ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Seznamy (Ingredience a Instrukce) */
+.custom-list {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.custom-list li {
+  padding-left: 1rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.custom-list li:last-child {
+  margin-bottom: 0;
+}
+
+.ingredients-list {
+  list-style-type: none; 
+}
+
+.ingredients-list li {
+  position: relative;
+}
+
+.ingredients-list li::before {
+  content: "\2022";
+  color: var(--brown-800);
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  left: -0.5rem;
+}
+
+.instructions-list {
+  list-style-position: outside;
+}
+
+.instructions-list li::marker {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+strong {
+  color: var(--stone-900);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--stone-150);
+  margin-bottom: 2rem;
+}
+
+/* Tabulka s nutričními hodnotami */
+.nutrition p {
+  margin-bottom: 1.5rem;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutrition-table td {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--stone-150);
+}
+
+.nutrition-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bold-value {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+/* Mobilní responzivita */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  .recipe-card {
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .recipe-image {
+    border-radius: 0;
+    margin-bottom: 2.5rem;
+  }
+  
+  .content-wrapper {
+    padding: 0 2rem 2.5rem 2rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+}
